@@ -904,6 +904,295 @@
       color: var(--text-muted);
     }
 
+    /* Document Previews (Ticket & Facture A4) */
+    .docs-preview-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 36px;
+      align-items: start;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1024px) {
+      .docs-preview-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+    }
+    .thermal-ticket-card {
+      background: #FFFFFF;
+      color: #0F172A;
+      border-radius: 16px;
+      padding: 24px 20px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 11.5px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(212, 175, 55, 0.35);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 340px;
+    }
+    .thermal-accent-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #F59E0B, #D4AF37, #F59E0B);
+    }
+    .thermal-accent-bot {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #D4AF37, #F59E0B, #D4AF37);
+    }
+    .thermal-header {
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+    .thermal-logo-emblem {
+      width: 32px;
+      height: 32px;
+      background: #D4AF37;
+      color: #0F172A;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-family: serif;
+      font-size: 16px;
+      margin: 0 auto 6px auto;
+    }
+    .thermal-store-fr {
+      font-family: Georgia, serif;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: #0F172A;
+      text-transform: uppercase;
+    }
+    .thermal-store-ar {
+      font-family: 'Cairo', 'Amiri', serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: #1E293B;
+      margin-top: 2px;
+    }
+    .thermal-sub {
+      font-size: 10px;
+      color: #64748B;
+      margin-top: 1px;
+    }
+    .thermal-fiscal-box {
+      border: 1px dashed #CBD5E1;
+      border-radius: 8px;
+      background: #F8FAFC;
+      padding: 6px 8px;
+      font-size: 9px;
+      color: #475569;
+      margin-bottom: 10px;
+    }
+    .thermal-row-fiscal {
+      display: flex;
+      justify-content: space-between;
+      margin: 1px 0;
+    }
+    .thermal-ticket-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #334155;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #F1F5F9;
+      margin-bottom: 6px;
+    }
+    .thermal-divider-dash {
+      border-top: 1px dashed #94A3B8;
+      margin: 10px 0;
+    }
+    .thermal-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      font-size: 11px;
+    }
+    .thermal-totals-box {
+      margin: 10px 0;
+    }
+    .thermal-tot-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: #334155;
+      margin-bottom: 3px;
+    }
+    .thermal-net-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: #78350F;
+      margin: 6px 0;
+    }
+    .thermal-barcode-wrap {
+      text-align: center;
+      margin: 10px 0 6px 0;
+    }
+    .thermal-footer {
+      text-align: center;
+      border-top: 1px dashed #94A3B8;
+      padding-top: 8px;
+      margin-top: 8px;
+      font-size: 9.5px;
+      line-height: 1.4;
+    }
+
+    /* Facture A4 Card */
+    .invoice-a4-card {
+      background: #FFFFFF;
+      color: #0F172A;
+      border-radius: 16px;
+      padding: 32px 28px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.12);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    .invoice-accent-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #0F172A, #D4AF37, #0F172A);
+    }
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .invoice-header {
+        flex-direction: column;
+      }
+    }
+    .invoice-meta-badge {
+      text-align: right;
+    }
+    html[dir="rtl"] .invoice-meta-badge {
+      text-align: left;
+    }
+    .invoice-badge-title {
+      display: inline-block;
+      background: #0F172A;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .invoice-client-box {
+      margin-top: 10px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    html[dir="rtl"] .invoice-client-box {
+      text-align: right;
+    }
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 11.5px;
+    }
+    .invoice-table th {
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 8px 10px;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .invoice-table td {
+      padding: 10px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .invoice-table tbody tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+    .invoice-bottom-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 640px) {
+      .invoice-bottom-grid {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+    .invoice-words-box {
+      max-width: 300px;
+    }
+    .invoice-stamp-box {
+      border: 1px dashed #CBD5E1;
+      background: #F8FAFC;
+      border-radius: 8px;
+      padding: 8px 12px;
+      text-align: center;
+      width: 220px;
+    }
+    .invoice-totals-col {
+      width: 240px;
+    }
+    .inv-tot-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      margin-bottom: 4px;
+    }
+    .inv-net-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-top: 6px;
+    }
+    .invoice-footer-line {
+      text-align: center;
+      font-size: 9.5px;
+      color: #94A3B8;
+      border-top: 1px solid #F1F5F9;
+      padding-top: 10px;
+    }
+
     /* Footer */
     .footer {
       background: #04060A;
@@ -1061,6 +1350,7 @@
         <li><a href="#features" data-i18n="nav_features">Fonctionnalités</a></li>
         <li><a href="#pillars" data-i18n="nav_pillars">Points Forts</a></li>
         <li><a href="#hardware" data-i18n="nav_hardware">Matériel</a></li>
+        <li><a href="#preview-docs" data-i18n="nav_docs">Tickets & Factures</a></li>
         <li><a href="#pricing" data-i18n="nav_pricing">Licence</a></li>
         <li><a href="#download" data-i18n="nav_download">Télécharger</a></li>
       </ul>
@@ -1449,6 +1739,214 @@
           </div>
         </div>
       </div>
+  <!-- Real Documents Preview: Ticket 80mm & Facture A4 (identical to software settings) -->
+  <section id="preview-docs" class="section" style="background: rgba(14, 19, 31, 0.45); border-top: 1px solid rgba(212, 175, 55, 0.15); border-bottom: 1px solid rgba(212, 175, 55, 0.15);">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-luxury" data-i18n="docs_badge">DOCUMENTS OFFICIELS & IMPRESSIONS DE CAISSE</div>
+        <h2 class="section-title">
+          <span data-i18n="docs_title_1">Aperçu Réel du</span>
+          <span class="gold-gradient-text" data-i18n="docs_title_2">Ticket de Caisse & de la Facture</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="docs_desc">
+          Une présentation soignée et d'un luxe absolu devant vos clients. Découvrez le rendu exact généré par VESTIA sur ticket thermique 80 mm et facture commerciale grand format A4.
+        </p>
+      </div>
+
+      <div class="docs-preview-grid">
+        <!-- 1. Real Thermal Receipt (80 mm) matching SettingsPrintingTab.tsx -->
+        <div>
+          <div style="text-align: center; margin-bottom: 14px;">
+            <span class="badge-luxury" style="font-size: 11px; padding: 6px 14px;" data-i18n="doc_ticket_badge">🧾 TICKET THERMIQUE COMPTOIR (80 MM)</span>
+          </div>
+          <div class="thermal-ticket-card">
+            <div class="thermal-accent-top"></div>
+            <div class="thermal-header">
+              <div class="thermal-logo-emblem">V</div>
+              <div class="thermal-store-fr">VESTIA</div>
+              <div class="thermal-store-ar" dir="rtl">فيستيا للملابس والأحذية</div>
+              <div class="thermal-sub">12 Boulevard Mohamed V, Alger</div>
+              <div class="thermal-sub">Tél : <strong>0550 12 34 56</strong></div>
+            </div>
+
+            <div class="thermal-fiscal-box">
+              <div class="thermal-row-fiscal">
+                <span>NIF : <strong>001234567890123</strong></span>
+                <span>RC : <strong>16/00-123456</strong></span>
+              </div>
+              <div class="thermal-row-fiscal">
+                <span>AI : <strong>160123456</strong></span>
+                <span>NIS : <strong>00123456</strong></span>
+              </div>
+            </div>
+
+            <div class="thermal-ticket-meta">
+              <span style="font-weight: 700;">TICKET : #TK-2026-0042</span>
+              <span>01/10/2026 14:30</span>
+            </div>
+            <div class="thermal-ticket-meta" style="border: none; padding-top: 0; color: #64748B; margin-bottom: 4px;">
+              <span>Caissier : Karim</span>
+              <span>Client Passager</span>
+            </div>
+
+            <div class="thermal-divider-dash"></div>
+
+            <div class="thermal-items-list">
+              <div class="thermal-item-row">
+                <div>
+                  <div style="font-weight: 700; color: #0F172A;">Costume 3 Pièces Slim</div>
+                  <div style="font-size: 10px; color: #64748B;">1 x 18 500 DA • Taille 50 • Bleu Marine</div>
+                </div>
+                <div style="font-weight: 800; color: #0F172A;">18 500 DA</div>
+              </div>
+              <div class="thermal-item-row">
+                <div>
+                  <div style="font-weight: 700; color: #0F172A;">Chemise Popeline Cintrée</div>
+                  <div style="font-size: 10px; color: #64748B;">2 x 3 500 DA • Taille L • Blanc Pur</div>
+                </div>
+                <div style="font-weight: 800; color: #0F172A;">7 000 DA</div>
+              </div>
+            </div>
+
+            <div class="thermal-divider-dash"></div>
+
+            <div class="thermal-totals-box">
+              <div class="thermal-tot-row">
+                <span>SOUS-TOTAL</span>
+                <span>25 500 DA</span>
+              </div>
+              <div class="thermal-tot-row" style="color: #059669; font-weight: 700;">
+                <span>REMISE PRIVILÈGE</span>
+                <span>-500 DA</span>
+              </div>
+              <div class="thermal-net-box">
+                <span style="font-size: 11px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.5px;">NET À PAYER</span>
+                <span style="font-size: 17px; font-weight: 900; letter-spacing: -0.5px;">25 000 DA</span>
+              </div>
+              <div class="thermal-tot-row" style="margin-top: 6px; font-size: 10px;">
+                <span>RÈGLEMENT :</span>
+                <span style="background: #F1F5F9; padding: 2px 6px; border-radius: 4px; font-weight: 700;">ESPÈCES</span>
+              </div>
+              <div class="thermal-tot-row" style="font-size: 10px; color: #64748B;">
+                <span>REÇU / RENDU :</span>
+                <span>25 000 DA / 0 DA</span>
+              </div>
+            </div>
+
+            <div class="thermal-barcode-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 45" width="200" height="45" style="display: block; margin: 0 auto; max-width: 85%;">
+                <g fill="#000">
+                  <rect x="10" y="0" width="2" height="30"/><rect x="14" y="0" width="1" height="30"/><rect x="17" y="0" width="3" height="30"/><rect x="22" y="0" width="1" height="30"/><rect x="25" y="0" width="2" height="30"/><rect x="30" y="0" width="4" height="30"/><rect x="36" y="0" width="1" height="30"/><rect x="40" y="0" width="2" height="30"/><rect x="44" y="0" width="3" height="30"/><rect x="49" y="0" width="1" height="30"/><rect x="53" y="0" width="2" height="30"/><rect x="58" y="0" width="2" height="30"/><rect x="62" y="0" width="4" height="30"/><rect x="68" y="0" width="1" height="30"/><rect x="72" y="0" width="2" height="30"/><rect x="76" y="0" width="3" height="30"/><rect x="82" y="0" width="2" height="30"/><rect x="86" y="0" width="1" height="30"/><rect x="90" y="0" width="3" height="30"/><rect x="95" y="0" width="2" height="30"/><rect x="100" y="0" width="1" height="30"/><rect x="104" y="0" width="4" height="30"/><rect x="110" y="0" width="2" height="30"/><rect x="115" y="0" width="1" height="30"/><rect x="118" y="0" width="3" height="30"/><rect x="123" y="0" width="2" height="30"/><rect x="128" y="0" width="1" height="30"/><rect x="132" y="0" width="3" height="30"/><rect x="137" y="0" width="2" height="30"/><rect x="142" y="0" width="4" height="30"/><rect x="148" y="0" width="1" height="30"/><rect x="152" y="0" width="2" height="30"/><rect x="156" y="0" width="3" height="30"/><rect x="162" y="0" width="1" height="30"/><rect x="166" y="0" width="2" height="30"/><rect x="170" y="0" width="2" height="30"/><rect x="174" y="0" width="4" height="30"/><rect x="180" y="0" width="2" height="30"/><rect x="185" y="0" width="1" height="30"/><rect x="188" y="0" width="3" height="30"/>
+                </g>
+                <text x="100" y="42" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle" fill="#000">TK-2026-0042</text>
+              </svg>
+            </div>
+
+            <div class="thermal-footer">
+              <div style="font-family: Georgia, serif; font-style: italic; color: #334155;">Merci de votre visite et à très bientôt !</div>
+              <div style="font-family: 'Cairo', 'Amiri', serif; font-weight: 700; color: #1E293B; margin-top: 2px;" dir="rtl">شكراً لزيارتكم ونتشرف بحضوركم دائماً</div>
+              <div style="font-size: 8.5px; font-weight: 800; color: #B45309; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;">★ ÉCHANGE SOUS 7 JOURS AVEC TICKET ★</div>
+              <div style="font-family: 'Cairo', 'Amiri', serif; font-size: 9.5px; font-weight: 800; color: #92400E; margin-top: 2px;" dir="rtl">★ التبديل متاح خلال 7 أيام مع الاستظهار بالوصل ★</div>
+            </div>
+            <div class="thermal-accent-bot"></div>
+          </div>
+        </div>
+
+        <!-- 2. Real Commercial Invoice (Format A4) matching SettingsPrintingTab.tsx -->
+        <div>
+          <div style="text-align: center; margin-bottom: 14px;">
+            <span class="badge-luxury" style="font-size: 11px; padding: 6px 14px;" data-i18n="doc_invoice_badge">📑 FACTURE COMMERCIALE & B2B (FORMAT A4)</span>
+          </div>
+          <div class="invoice-a4-card">
+            <div class="invoice-accent-top"></div>
+            <div class="invoice-header">
+              <div class="invoice-brand">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                  <div style="width: 32px; height: 32px; background: #D4AF37; color: #0F172A; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: serif; font-size: 16px;">V</div>
+                  <h3 style="font-size: 20px; font-weight: 900; font-family: Georgia, serif; color: #0F172A; margin: 0; letter-spacing: 1px;">VESTIA</h3>
+                </div>
+                <div style="font-family: 'Cairo', serif; font-weight: 700; color: #334155; font-size: 13px;" dir="rtl">فيستيا للملابس والأحذية وتجارة الجملة</div>
+                <div style="font-size: 11px; color: #64748B; margin-top: 4px; line-height: 1.4;">
+                  12 Boulevard Mohamed V, Alger<br>
+                  Tél : <strong>0550 12 34 56</strong> | Email : contact@vestia.dz<br>
+                  NIF : 001234567890123 • RC : 16/00-123456 • AI : 160123456 • NIS : 00123456
+                </div>
+              </div>
+              <div class="invoice-meta-badge">
+                <div class="invoice-badge-title">FACTURE N° FC-2026-0089</div>
+                <div style="font-size: 11px; color: #64748B; margin-top: 6px;">
+                  Date d'émission : <strong>01/10/2026</strong><br>
+                  Mode de règlement : <strong>Virement / Espèces</strong>
+                </div>
+                <div class="invoice-client-box">
+                  <span style="font-size: 9px; text-transform: uppercase; color: #94A3B8; font-weight: 800; display: block;">CLIENT FACTURÉ (B2B) :</span>
+                  <strong style="color: #0F172A; font-size: 12px;">SARL MODE & TENDANCE</strong>
+                  <span style="display: block; font-size: 10px; color: #64748B;">Centre Commercial El Qods, Chéraga, Alger</span>
+                </div>
+              </div>
+            </div>
+
+            <table class="invoice-table">
+              <thead>
+                <tr>
+                  <th style="text-align: left;">Désignation de l'Article</th>
+                  <th>Variante</th>
+                  <th style="text-align: center;">Qté</th>
+                  <th style="text-align: right;">Prix Unitaire</th>
+                  <th style="text-align: right;">Total TTC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Costume 3 Pièces Slim Luxe</strong>
+                    <span style="display: block; font-size: 10px; color: #94A3B8;">Réf: CST-SLIM-01 • Confection Premium</span>
+                  </td>
+                  <td>50 • Bleu Marine</td>
+                  <td style="text-align: center; font-weight: 700;">1</td>
+                  <td style="text-align: right; font-family: monospace;">18 500 DA</td>
+                  <td style="text-align: right; font-family: monospace; font-weight: 700;">18 500 DA</td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Chemise Popeline Cintrée Coton</strong>
+                    <span style="display: block; font-size: 10px; color: #94A3B8;">Réf: CHM-COT-04 • 100% Coton d'Égypte</span>
+                  </td>
+                  <td>L • Blanc Pur</td>
+                  <td style="text-align: center; font-weight: 700;">2</td>
+                  <td style="text-align: right; font-family: monospace;">3 500 DA</td>
+                  <td style="text-align: right; font-family: monospace; font-weight: 700;">7 000 DA</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="invoice-bottom-grid">
+              <div class="invoice-words-box">
+                <div style="font-size: 10.5px; color: #64748B; margin-bottom: 12px;">
+                  Arrêté la présente facture à la somme de :<br>
+                  <strong style="font-family: Georgia, serif; color: #0F172A; font-size: 12px;">Vingt-cinq mille Dinars Algériens TTC.</strong>
+                </div>
+                <div class="invoice-stamp-box">
+                  <span style="font-size: 9px; font-weight: 800; color: #94A3B8; text-transform: uppercase;">Cachet & Signature</span>
+                  <div style="height: 24px;"></div>
+                </div>
+              </div>
+              <div class="invoice-totals-col">
+                <div class="inv-tot-row"><span>Sous-Total Brut :</span><span style="font-family: monospace;">25 500 DA</span></div>
+                <div class="inv-tot-row" style="color: #059669; font-weight: 700;"><span>Remise Commerciale :</span><span style="font-family: monospace;">-500 DA</span></div>
+                <div class="inv-net-box">
+                  <span style="font-size: 11px; text-transform: uppercase; font-family: serif; color: #451A03; font-weight: 700;">NET À PAYER :</span>
+                  <span style="font-family: monospace; font-size: 16px; font-weight: 900; color: #451A03;">25 000 DA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="invoice-footer-line">
+              VESTIA POS • Solution de Gestion Commerciale Retail d'Excellence • Document certifié conforme
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1459,17 +1957,17 @@
         <div class="badge-luxury" data-i18n="dl_badge">TÉLÉCHARGEMENT DIRECT</div>
         <h2 class="section-title">
           <span data-i18n="dl_title_1">Téléchargez VESTIA POS Dès Aujourd'hui</span><br>
-          <span class="gold-gradient-text" data-i18n="dl_title_2">Essai Gratuit Immédiat</span>
+          <span class="gold-gradient-text" data-i18n="dl_title_2">Installation Immédiate Windows</span>
         </h2>
         <p class="section-subtitle" data-i18n="dl_sub">
-          Testez le logiciel directement sur votre machine Windows. Aucune carte bancaire requise.
+          Téléchargez et installez le logiciel directement sur votre PC Windows. Opérationnel en quelques clics.
         </p>
       </div>
 
       <div class="download-grid">
         <!-- Main Recommended Download Card -->
         <div class="download-card-featured">
-          <span class="download-badge-recom" data-i18n="dl_badge_recom">⭐ RECOMMANDÉ</span>
+          <span class="download-badge-recom" data-i18n="dl_badge_recom">⭐ INSTALLATEUR OFFICIEL</span>
           <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
             <div style="width: 56px; height: 56px; border-radius: 14px; background: rgba(212, 175, 55, 0.15); display: flex; align-items: center; justify-content: center;">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -1495,7 +1993,7 @@
             </div>
             <div class="meta-box">
               <span data-i18n="meta_license_label">Licence</span>
-              <strong style="color: #10B981;" data-i18n="meta_free_trial">Essai Gratuit</strong>
+              <strong style="color: #10B981;" data-i18n="meta_free_trial">Licence Officielle</strong>
             </div>
           </div>
 
@@ -1504,9 +2002,8 @@
             <span data-i18n="btn_dl_setup">Télécharger VESTIA-Setup.exe (82 Mo)</span>
           </a>
 
-          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-muted);">
-            <span data-i18n="dl_secure">🔒 Fichier sain et certifié VESTIA</span>
-            <a href="https://github.com/benchouala11-design/VESTIA/releases/latest/download/VESTIA-Windows-x64.zip" style="color: var(--gold-light); text-decoration: underline;" data-i18n="dl_zip_link">Ou télécharger la version Portable (.ZIP 120 Mo)</a>
+          <div style="text-align: center; font-size: 12px; color: var(--text-muted);">
+            <span data-i18n="dl_secure">🔒 Fichier d'installation officiel certifié VESTIA (Setup .exe)</span>
           </div>
         </div>
 
@@ -1609,6 +2106,45 @@
             <span data-i18n="t3_city">Park Mall, Sétif</span>
           </div>
         </div>
+
+        <!-- Card 4 (Darija: Yacine Blida) -->
+        <div class="luxury-card testimonial-card" style="border: 1px solid rgba(212, 175, 55, 0.35);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div class="testimonial-stars" style="margin-bottom: 0;">★★★★★</div>
+            <span style="font-size: 10px; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); font-weight: 800; padding: 2px 8px; border-radius: 4px;">🇩🇿 AVIS DARIJA</span>
+          </div>
+          <p class="testimonial-quote" data-i18n="t4_quote">"والله غير خفيف ريشة وساهل بزااف. الخدامة عندي تعلموه في نص ساعة، وتفرزنا فليطاي وليكولور بلا ما تتخلط السلعة فالوكازيون ولا الصولد. يعطيك الصحة خويا راؤوف على الدعم والمتابعة."</p>
+          <div class="testimonial-author">
+            <h5 data-i18n="t4_author">ياسين — بوتيك كاجوال للرجال</h5>
+            <span data-i18n="t4_city">وسط المدينة، البليدة</span>
+          </div>
+        </div>
+
+        <!-- Card 5 (Darija: Amine El Eulma) -->
+        <div class="luxury-card testimonial-card" style="border: 1px solid rgba(212, 175, 55, 0.35);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div class="testimonial-stars" style="margin-bottom: 0;">★★★★★</div>
+            <span style="font-size: 10px; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); font-weight: 800; padding: 2px 8px; border-radius: 4px;">🇩🇿 AVIS DARIJA</span>
+          </div>
+          <p class="testimonial-quote" data-i18n="t5_quote">"قمة فالتسيير.. كنت نضل سهران مع الكراس والحسابات، دروك كل يوم فالليل بضغطة زر يخرجلي رابور كاس ورابور ستوك مفروز بالسنتيم، وزيد بدون أي اشتراك شهري يريح البال."</p>
+          <div class="testimonial-author">
+            <h5 data-i18n="t5_author">أمين — تجارة ملابس وأحذية جملة وتجزئة</h5>
+            <span data-i18n="t5_city">شارع دبي، العلمة (سطيف)</span>
+          </div>
+        </div>
+
+        <!-- Card 6 (Darija: Kamel Oran) -->
+        <div class="luxury-card testimonial-card" style="border: 1px solid rgba(212, 175, 55, 0.35);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div class="testimonial-stars" style="margin-bottom: 0;">★★★★★</div>
+            <span style="font-size: 10px; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); font-weight: 800; padding: 2px 8px; border-radius: 4px;">🇩🇿 AVIS DARIJA</span>
+          </div>
+          <p class="testimonial-quote" data-i18n="t6_quote">"السيرفيس توب والبرنامج ما يتبلوکاش ڨاع حتى كي تقطع الأنترنت، واللوغو يخرج شباب بزاف فالتيكي. لي يخدم حوايج ولا صبابط ننصحو بيه بلا تردد."</p>
+          <div class="testimonial-author">
+            <h5 data-i18n="t6_author">كمال — محل ألبسة نسائية وأطفال</h5>
+            <span data-i18n="t6_city">حي السلام، وهران</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1636,6 +2172,7 @@
             <li><a href="#features" data-i18n="nav_features">Fonctionnalités</a></li>
             <li><a href="#pillars" data-i18n="nav_pillars">Points Forts</a></li>
             <li><a href="#hardware" data-i18n="nav_hardware">Matériel Compatible</a></li>
+            <li><a href="#preview-docs" data-i18n="nav_docs">Tickets & Factures</a></li>
             <li><a href="#download" data-i18n="nav_download">Télécharger</a></li>
           </ul>
         </div>
@@ -1677,6 +2214,7 @@
         nav_features: "Fonctionnalités",
         nav_pillars: "Points Forts",
         nav_hardware: "Matériel",
+        nav_docs: "Tickets & Factures",
         nav_pricing: "Licence",
         nav_download: "Télécharger",
         nav_btn_dl: "Télécharger",
@@ -1743,21 +2281,26 @@
         hw_scan_desc: "Douchettes USB, sans-fil 2.4G ou Bluetooth, scanners omnidirectionnels de comptoir 1D et 2D.",
         hw_drawer_title: "Tiroirs-Caisses",
         hw_drawer_desc: "Ouverture automatique standard par impulsion RJ11 connectée à l'imprimante thermique.",
+        docs_badge: "DOCUMENTS OFFICIELS & IMPRESSIONS DE CAISSE",
+        docs_title_1: "Aperçu Réel du",
+        docs_title_2: "Ticket de Caisse & de la Facture",
+        docs_desc: "Une présentation soignée et d'un luxe absolu devant vos clients. Découvrez le rendu exact généré par VESTIA sur ticket thermique 80 mm et facture commerciale grand format A4.",
+        doc_ticket_badge: "🧾 TICKET THERMIQUE COMPTOIR (80 MM)",
+        doc_invoice_badge: "📑 FACTURE COMMERCIALE & B2B (FORMAT A4)",
         dl_badge: "TÉLÉCHARGEMENT DIRECT",
         dl_title_1: "Téléchargez VESTIA POS Dès Aujourd'hui",
-        dl_title_2: "Essai Gratuit Immédiat",
-        dl_sub: "Testez le logiciel directement sur votre machine Windows. Aucune carte bancaire requise.",
-        dl_badge_recom: "⭐ RECOMMANDÉ",
+        dl_title_2: "Installation Immédiate Windows",
+        dl_sub: "Téléchargez et installez le logiciel directement sur votre machine Windows. Opérationnel en quelques clics.",
+        dl_badge_recom: "⭐ INSTALLATEUR OFFICIEL",
         dl_box_title: "VESTIA Setup Automatique",
         dl_box_sub: "Exécutable d'installation en 1 clic pour Windows",
         meta_version_label: "Version",
         meta_size_label: "Taille",
         meta_compat_label: "Compatibilité",
         meta_license_label: "Licence",
-        meta_free_trial: "Essai Gratuit",
+        meta_free_trial: "Licence Officielle",
         btn_dl_setup: "Télécharger VESTIA-Setup.exe (82 Mo)",
-        dl_secure: "🔒 Fichier sain et certifié VESTIA",
-        dl_zip_link: "Ou télécharger la version Portable (.ZIP 120 Mo)",
+        dl_secure: "🔒 Fichier d'installation officiel certifié VESTIA (Setup .exe)",
         steps_title: "Comment Démarrer en 60 Secondes :",
         step1_title: "Téléchargez l'application",
         step1_desc: "Cliquez sur le bouton ci-contre pour télécharger VESTIA-Setup.exe.",
@@ -1781,6 +2324,15 @@
         t3_quote: "\"L'interface est super classe et luxueuse, les clients voient le bel écran de caisse avec le logo. Zéro abonnement mensuel, ça fait une énorme économie.\"",
         t3_author: "Boutique Vêtements Femme & Enfant",
         t3_city: "Park Mall, Sétif",
+        t4_quote: "« والله غير خفيف ريشة وساهل بزااف. الخدامة عندي تعلموه في نص ساعة، وتفرزنا فليطاي وليكولور بلا ما تتخلط السلعة فالوكازيون ولا الصولد. يعطيك الصحة خويا راؤوف على الدعم والمتابعة. »",
+        t4_author: "Yacine — Boutique Casual Men",
+        t4_city: "Bab Sebt, Blida",
+        t5_quote: "« قمة فالتسيير.. كنت نضل سهران مع الكراس والحسابات، دروك كل يوم فالليل بضغطة زر يخرجلي رابور كاس ورابور ستوك مفروز بالسنتيم، وزيد بدون أي اشتراك شهري يريح البال. »",
+        t5_author: "Amine — Grossiste Vêtements & Séries",
+        t5_city: "El Eulma, Sétif",
+        t6_quote: "« السيرفيس توب والبرنامج ما يتبلوکاش ڨاع حتى كي تقطع الأنترنت، واللوغو يخرج شباب بزاف فالتيكي. لي يخدم حوايج ولا صبابط ننصحو بيه بلا تردد. »",
+        t6_author: "Kamel — Mode & Chaussures",
+        t6_city: "Hai Essalam, Oran",
         footer_brand_desc: "VESTIA POS — La Solution de Gestion d'Excellence. Logiciel de caisse tactile professionnel pour magasins de vêtements (homme, femme, enfant), chaussures, accessoires et grossistes.",
         footer_nav_title: "Navigation",
         footer_contact_title: "Contact & Support",
@@ -1793,6 +2345,7 @@
         nav_features: "المميزات",
         nav_pillars: "نقاط القوة",
         nav_hardware: "العتاد المدعوم",
+        nav_docs: "التذاكر والفواتير",
         nav_pricing: "الترخيص",
         nav_download: "تحميل البرنامج",
         nav_btn_dl: "تحميل الآن",
@@ -1859,21 +2412,26 @@
         hw_scan_desc: "الدوشات السلكية واللاسلكية 2.4G أو بلوتوث، وأجهزة المسح الضوئي المكتبي 1D و 2D.",
         hw_drawer_title: "صناديق النقود الآلية",
         hw_drawer_desc: "الفتح التلقائي القياسي لمنفذ RJ11 المتصل بطابعة التذاكر مع كل عملية بيع.",
+        docs_badge: "الوثائق الرسمية والمطبوعات",
+        docs_title_1: "المعاينة الحقيقية",
+        docs_title_2: "لتذكرة الصندوق والفاتورة التجارية",
+        docs_desc: "أناقة وفخامة تامة أمام زبائنك. شاهد الشكل والمظهر الحقيقي المستخرج من VESTIA لتذكرة الصندوق الحرارية 80 مم والفاتورة الرسمية الكبيرة A4.",
+        doc_ticket_badge: "🧾 تذكرة الصندوق الحرارية (80 مم)",
+        doc_invoice_badge: "📑 الفاتورة التجارية للشركات والزبائن (A4)",
         dl_badge: "تحميل البرنامج المباشر",
         dl_title_1: "حمّل برنامج VESTIA POS اليوم",
-        dl_title_2: "نسخة تجريبية مجانية فورية",
-        dl_sub: "جرّب البرنامج مباشرة على جهازك مجاناً وبكل حرية ودون الحاجة لبطاقة بنكية.",
-        dl_badge_recom: "⭐ النسخة الموصى بها",
+        dl_title_2: "تثبيت فوري ومباشر لويندوز",
+        dl_sub: "حمّل وثبّت البرنامج مباشرة على حاسوبك بنظام ويندوز، جاهز للاستخدام الفوري وبكل سهولة وبدون تعقيد.",
+        dl_badge_recom: "⭐ برنامج التثبيت الرسمي",
         dl_box_title: "برنامج التثبيت التلقائي VESTIA Setup",
         dl_box_sub: "ملف تنفيذي للتثبيت بضغطة زر واحدة على ويندوز",
         meta_version_label: "الإصدار",
         meta_size_label: "الحجم",
         meta_compat_label: "التوافق",
         meta_license_label: "نوع الترخيص",
-        meta_free_trial: "تجريبي مجاني",
+        meta_free_trial: "ترخيص رسمي",
         btn_dl_setup: "تحميل VESTIA-Setup.exe (82 ميغا)",
-        dl_secure: "🔒 ملف آمن ومضمون من VESTIA",
-        dl_zip_link: "أو حمّل النسخة المحمولة بدون تثبيت (.ZIP 120 ميغا)",
+        dl_secure: "🔒 ملف رسمي آمن ومضمون من VESTIA (Setup .exe)",
         steps_title: "كيف تبدأ في 60 ثانية فقط :",
         step1_title: "حمّل البرنامج",
         step1_desc: "اضغط على زر التحميل للحصول على ملف VESTIA-Setup.exe.",
@@ -1897,6 +2455,15 @@
         t3_quote: "\"الواجهة راقية وفخمة جداً أمام الزبائن مع شعار متجرنا على الشاشة والتذاكر. ودون أي اشتراك شهري، وهذا وفّر علينا مبالغ كبيرة سنوياً.\"",
         t3_author: "محل ملابس نسائية وأطفال",
         t3_city: "بارك مول، سطيف",
+        t4_quote: "« والله غير خفيف ريشة وساهل بزااف. الخدامة عندي تعلموه في نص ساعة، وتفرزنا فليطاي وليكولور بلا ما تتخلط السلعة فالوكازيون ولا الصولد. يعطيك الصحة خويا راؤوف على الدعم والمتابعة. »",
+        t4_author: "ياسين — محل Casual Men",
+        t4_city: "باب السبت، البليدة",
+        t5_quote: "« قمة فالتسيير.. كنت نضل سهران مع الكراس والحسابات، دروك كل يوم فالليل بضغطة زر يخرجلي رابور كاس ورابور ستوك مفروز بالسنتيم، وزيد بدون أي اشتراك شهري يريح البال. »",
+        t5_author: "أمين — تجارة وتوزيع الملابس بالجملة والسيري",
+        t5_city: "دبي، العلمة (سطيف)",
+        t6_quote: "« السيرفيس توب والبرنامج ما يتبلوکاش ڨاع حتى كي تقطع الأنترنت، واللوغو يخرج شباب بزاف فالتيكي. لي يخدم حوايج ولا صبابط ننصحو بيه بلا تردد. »",
+        t6_author: "كمال — ملابس وأحذية",
+        t6_city: "حي السلام، وهران",
         footer_brand_desc: "VESTIA POS — الحل الأرقى لإدارة محلات الملابس (رجالي، نسائي، أطفال)، الأحذية، الإكسسوارات ومستودعات الجملة.",
         footer_nav_title: "أقسام الموقع",
         footer_contact_title: "الاتصال والدعم الفني",
