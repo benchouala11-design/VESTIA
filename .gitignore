@@ -1,0 +1,8 @@
+# Exclude files exceeding GitHub's 100MB limit
+downloads/*.zip
+downloads/VESTIA-Windows-x64.zip
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
