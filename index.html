@@ -748,18 +748,48 @@
     }
 
     /* Document Previews (Ticket & Facture A4) */
+    #preview-docs {
+      overflow-x: clip;
+      max-width: 100%;
+    }
     .docs-preview-grid {
       display: grid;
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 340px minmax(0, 1fr);
       gap: 36px;
       align-items: start;
       max-width: 1080px;
       margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .doc-preview-col {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .doc-badge-wrap {
+      text-align: center;
+      margin-bottom: 14px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
     @media (max-width: 1024px) {
       .docs-preview-grid {
-        grid-template-columns: 1fr;
-        justify-items: center;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        max-width: 680px;
+      }
+      .thermal-ticket-card {
+        margin: 0 auto;
+      }
+      .invoice-a4-card {
+        width: 100%;
+        max-width: 100%;
       }
     }
     .thermal-ticket-card {
@@ -774,6 +804,7 @@
       overflow: hidden;
       width: 100%;
       max-width: 340px;
+      box-sizing: border-box;
     }
     .thermal-accent-top {
       position: absolute;
@@ -838,15 +869,24 @@
       font-size: 9px;
       color: #475569;
       margin-bottom: 10px;
+      overflow: hidden;
+      box-sizing: border-box;
+      width: 100%;
     }
     .thermal-row-fiscal {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2px 6px;
       margin: 1px 0;
     }
     .thermal-ticket-meta {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2px 6px;
       font-size: 10px;
       color: #334155;
       padding-bottom: 4px;
@@ -861,33 +901,73 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      gap: 8px;
       margin-bottom: 8px;
       font-size: 11px;
     }
+    .thermal-item-row > div:first-child {
+      flex: 1;
+      min-width: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .thermal-item-row > div:last-child {
+      flex-shrink: 0;
+      white-space: nowrap;
+      text-align: right;
+      font-family: monospace;
+    }
     .thermal-totals-box {
       margin: 10px 0;
+      width: 100%;
     }
     .thermal-tot-row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      gap: 8px;
       font-size: 10.5px;
       color: #334155;
       margin-bottom: 3px;
+    }
+    .thermal-tot-row > span:last-child {
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-family: monospace;
     }
     .thermal-net-box {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 8px;
       background: #FEF3C7;
       border: 1px solid #FCD34D;
       border-radius: 8px;
       padding: 8px 10px;
       color: #78350F;
       margin: 6px 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .thermal-net-box span:first-child {
+      min-width: 0;
+    }
+    .thermal-net-box span:last-child {
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-family: monospace;
     }
     .thermal-barcode-wrap {
       text-align: center;
       margin: 10px 0 6px 0;
+      width: 100%;
+      overflow: hidden;
+    }
+    .thermal-barcode-wrap svg {
+      display: block;
+      margin: 0 auto;
+      max-width: 85%;
+      height: auto;
     }
     .thermal-footer {
       text-align: center;
@@ -896,6 +976,8 @@
       margin-top: 8px;
       font-size: 9.5px;
       line-height: 1.4;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     /* Facture A4 Card */
@@ -909,6 +991,9 @@
       position: relative;
       overflow: hidden;
       width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
     .invoice-accent-top {
       position: absolute;
@@ -926,14 +1011,24 @@
       padding-bottom: 18px;
       margin-bottom: 20px;
       gap: 20px;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
     @media (max-width: 640px) {
       .invoice-header {
         flex-direction: column;
       }
     }
+    .invoice-brand {
+      min-width: 0;
+      flex: 1;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
     .invoice-meta-badge {
       text-align: right;
+      min-width: 0;
     }
     html[dir="rtl"] .invoice-meta-badge {
       text-align: left;
@@ -948,6 +1043,8 @@
       padding: 4px 10px;
       border-radius: 6px;
       text-transform: uppercase;
+      max-width: 100%;
+      box-sizing: border-box;
     }
     .invoice-client-box {
       margin-top: 10px;
@@ -956,6 +1053,10 @@
       border-radius: 8px;
       padding: 8px 12px;
       text-align: left;
+      min-width: 0;
+      box-sizing: border-box;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
     html[dir="rtl"] .invoice-client-box {
       text-align: right;
@@ -963,7 +1064,7 @@
     .invoice-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 20px;
+      margin-bottom: 0;
       font-size: 11.5px;
     }
     .invoice-table th {
@@ -974,6 +1075,7 @@
       text-transform: uppercase;
       font-weight: 800;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
     .invoice-table td {
       padding: 10px;
@@ -990,6 +1092,9 @@
       border-top: 1px solid #E2E8F0;
       padding-top: 16px;
       margin-bottom: 16px;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
     @media (max-width: 640px) {
       .invoice-bottom-grid {
@@ -999,6 +1104,9 @@
     }
     .invoice-words-box {
       max-width: 300px;
+      min-width: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
     .invoice-stamp-box {
       border: 1px dashed #CBD5E1;
@@ -1007,26 +1115,49 @@
       padding: 8px 12px;
       text-align: center;
       width: 220px;
+      max-width: 100%;
+      box-sizing: border-box;
     }
     .invoice-totals-col {
       width: 240px;
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
     }
     .inv-tot-row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      gap: 8px;
       font-size: 11px;
       color: #64748B;
       margin-bottom: 4px;
+    }
+    .inv-tot-row > span:last-child {
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-family: monospace;
     }
     .inv-net-box {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 8px;
       background: #FEF3C7;
       border: 1px solid #FCD34D;
       border-radius: 8px;
       padding: 8px 10px;
       margin-top: 6px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .inv-net-box span:first-child {
+      min-width: 0;
+    }
+    .inv-net-box span:last-child {
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-family: monospace;
     }
     .invoice-footer-line {
       text-align: center;
@@ -1034,6 +1165,8 @@
       color: #94A3B8;
       border-top: 1px solid #F1F5F9;
       padding-top: 10px;
+      word-break: break-word;
+      line-height: 1.4;
     }
 
     /* Footer */
@@ -1132,9 +1265,36 @@
     /* Table Wrapper for Horizontal Scroll on Mobile */
     .invoice-table-wrap {
       width: 100%;
+      max-width: 100%;
+      min-width: 0;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
       margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+    }
+    .invoice-table-wrap::-webkit-scrollbar {
+      height: 4px;
+    }
+    .invoice-table-wrap::-webkit-scrollbar-track {
+      background: #F8FAFC;
+      border-radius: 4px;
+    }
+    .invoice-table-wrap::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    .invoice-scroll-cue {
+      display: none;
+      font-size: 9px;
+      color: #94A3B8;
+      text-align: center;
+      margin: 4px 0 12px;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
     }
 
     /* Responsive */
@@ -1340,21 +1500,40 @@
       }
 
       /* Documents Caisse & Facture A4 (Sans Débordement) */
+      #preview-docs {
+        overflow-x: clip;
+      }
       .docs-preview-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .doc-preview-col {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
       }
       .thermal-ticket-card {
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 360px !important;
+        margin: 0 auto !important;
         padding: 16px 12px;
         font-size: 10px;
         box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+        box-sizing: border-box;
       }
       .thermal-store-fr {
         font-size: 13.5px;
       }
       .thermal-store-ar {
         font-size: 12px;
+      }
+      .thermal-fiscal-box {
+        padding: 5px 6px;
+      }
+      .thermal-row-fiscal {
+        font-size: 8px;
       }
       .thermal-net-box {
         padding: 6px 8px;
@@ -1364,36 +1543,86 @@
       }
 
       .invoice-a4-card {
-        padding: 14px 10px;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 16px 10px;
         border-radius: 14px;
-        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
       }
       .invoice-header {
         flex-direction: column;
         gap: 10px;
         padding-bottom: 10px;
         margin-bottom: 10px;
+        width: 100%;
+        min-width: 0;
+      }
+      .invoice-brand {
+        width: 100%;
+        min-width: 0;
       }
       .invoice-meta-badge {
         text-align: left;
+        width: 100%;
+        min-width: 0;
       }
       html[dir="rtl"] .invoice-meta-badge {
         text-align: right;
       }
+      .invoice-client-box {
+        width: 100%;
+        min-width: 0;
+      }
+      .invoice-table-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        margin-bottom: 4px;
+        border: 1px solid #E2E8F0;
+        border-radius: 6px;
+      }
       .invoice-table {
-        min-width: 440px;
-        font-size: 10px;
+        min-width: 360px;
+        width: 100%;
+        font-size: 9.5px;
       }
       .invoice-table th, .invoice-table td {
         padding: 5px 6px;
       }
+      .invoice-table th {
+        font-size: 8.5px;
+        white-space: nowrap;
+      }
+      .invoice-table td:nth-child(1) {
+        min-width: 110px;
+        white-space: normal;
+      }
+      .invoice-table td:nth-child(2),
+      .invoice-table td:nth-child(3),
+      .invoice-table td:nth-child(4),
+      .invoice-table td:nth-child(5) {
+        white-space: nowrap;
+      }
+      .invoice-scroll-cue {
+        display: flex;
+      }
       .invoice-bottom-grid {
         flex-direction: column;
+        align-items: stretch;
         gap: 10px;
+        width: 100%;
+        min-width: 0;
       }
       .invoice-words-box, .invoice-stamp-box, .invoice-totals-col {
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
       }
       .invoice-stamp-box {
         margin-top: 6px;
@@ -1567,6 +1796,26 @@
       }
       .download-meta {
         grid-template-columns: 1fr;
+      }
+      .thermal-ticket-card {
+        padding: 12px 8px !important;
+        font-size: 9px;
+      }
+      .thermal-store-fr {
+        font-size: 12px;
+      }
+      .thermal-item-row {
+        font-size: 9px;
+      }
+      .invoice-a4-card {
+        padding: 12px 6px !important;
+      }
+      .invoice-table {
+        min-width: 330px;
+        font-size: 8.5px;
+      }
+      .invoice-table th, .invoice-table td {
+        padding: 4px 4px;
       }
     }
   </style>
@@ -1869,8 +2118,8 @@
 
       <div class="docs-preview-grid">
         <!-- 1. Real Thermal Receipt (80 mm) matching SettingsPrintingTab.tsx -->
-        <div>
-          <div style="text-align: center; margin-bottom: 14px;">
+        <div class="doc-preview-col">
+          <div class="doc-badge-wrap">
             <span class="badge-luxury" style="font-size: 11px; padding: 6px 14px;" data-i18n="doc_ticket_badge">🧾 TICKET THERMIQUE COMPTOIR (80 MM)</span>
           </div>
           <div class="thermal-ticket-card">
@@ -1967,8 +2216,8 @@
         </div>
 
         <!-- 2. Real Commercial Invoice (Format A4) matching SettingsPrintingTab.tsx -->
-        <div>
-          <div style="text-align: center; margin-bottom: 14px;">
+        <div class="doc-preview-col">
+          <div class="doc-badge-wrap">
             <span class="badge-luxury" style="font-size: 11px; padding: 6px 14px;" data-i18n="doc_invoice_badge">📑 FACTURE COMMERCIALE & B2B (FORMAT A4)</span>
           </div>
           <div class="invoice-a4-card">
@@ -2034,6 +2283,10 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div class="invoice-scroll-cue">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8L22 12L18 16"/><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
+              <span data-i18n="doc_scroll_hint">Glissez horizontalement pour voir le tableau</span>
             </div>
 
             <div class="invoice-bottom-grid">
@@ -2390,6 +2643,7 @@
         docs_desc: "Une présentation soignée et d'un luxe absolu devant vos clients. Découvrez le rendu exact généré par VESTIA sur ticket thermique 80 mm et facture commerciale grand format A4.",
         doc_ticket_badge: "🧾 TICKET THERMIQUE COMPTOIR (80 MM)",
         doc_invoice_badge: "📑 FACTURE COMMERCIALE & B2B (FORMAT A4)",
+        doc_scroll_hint: "Glissez horizontalement pour voir le tableau",
         dl_badge: "TÉLÉCHARGEMENT DIRECT",
         dl_title_1: "Téléchargez VESTIA POS Dès Aujourd'hui",
         dl_title_2: "Installation Immédiate Windows",
@@ -2508,6 +2762,7 @@
         docs_desc: "أناقة وفخامة تامة أمام زبائنك. شاهد الشكل والمظهر الحقيقي المستخرج من VESTIA لتذكرة الصندوق الحرارية 80 مم والفاتورة الرسمية الكبيرة A4.",
         doc_ticket_badge: "🧾 تذكرة الصندوق الحرارية (80 مم)",
         doc_invoice_badge: "📑 الفاتورة التجارية للشركات والزبائن (A4)",
+        doc_scroll_hint: "مرّر أفقياً لعرض كامل بيانات الجدول",
         dl_badge: "تحميل البرنامج المباشر",
         dl_title_1: "حمّل برنامج VESTIA POS اليوم",
         dl_title_2: "تثبيت فوري ومباشر لويندوز",
