@@ -284,6 +284,113 @@
       color: var(--gold-light);
     }
 
+    /* Eye-Catching Animated Tutorial Button in Header */
+    .nav-tutorial-btn {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 13px 5px 11px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.18) 0%, rgba(185, 28, 28, 0.32) 100%);
+      border: 1.5px solid rgba(239, 68, 68, 0.65);
+      color: #FFFFFF !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.3px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.35);
+      animation: navGlowPulse 2.4s infinite ease-in-out;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      text-decoration: none !important;
+    }
+
+    .tutorial-pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #EF4444;
+      box-shadow: 0 0 8px #EF4444;
+      display: inline-block;
+      animation: liveDotPulse 1.2s infinite alternate;
+      flex-shrink: 0;
+    }
+
+    .tutorial-play-icon {
+      color: #FCA5A5;
+      filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.7));
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .tutorial-badge-pill {
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      background: var(--gold-gradient);
+      color: #07090E;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
+      margin-left: 2px;
+    }
+
+    html[dir="rtl"] .tutorial-badge-pill {
+      margin-left: 0;
+      margin-right: 2px;
+    }
+
+    /* Moving light reflection shimmer */
+    .nav-tutorial-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.28) 50%, transparent 60%);
+      transform: translateX(-100%);
+      animation: navShimmerSweep 3.2s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes navGlowPulse {
+      0%, 100% {
+        box-shadow: 0 0 14px rgba(239, 68, 68, 0.35), inset 0 0 8px rgba(239, 68, 68, 0.15);
+        border-color: rgba(239, 68, 68, 0.6);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 26px rgba(239, 68, 68, 0.75), 0 0 10px rgba(255, 255, 255, 0.35), inset 0 0 14px rgba(239, 68, 68, 0.3);
+        border-color: rgba(248, 113, 113, 0.95);
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes liveDotPulse {
+      0% { opacity: 0.4; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.3); box-shadow: 0 0 12px #EF4444; }
+    }
+
+    @keyframes navShimmerSweep {
+      0% { transform: translateX(-100%); }
+      20%, 100% { transform: translateX(100%); }
+    }
+
+    .nav-tutorial-btn:hover {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.42) 0%, rgba(220, 38, 38, 0.65) 100%) !important;
+      border-color: #EF4444 !important;
+      box-shadow: 0 0 32px rgba(239, 68, 68, 0.9) !important;
+      transform: translateY(-2px) scale(1.07) !important;
+    }
+
+    .nav-tutorial-btn:hover .tutorial-play-icon {
+      transform: scale(1.3);
+      color: #FFFFFF;
+    }
+
     .nav-actions {
       display: flex;
       align-items: center;
@@ -2007,7 +2114,14 @@
       <ul class="nav-links">
         <li><a href="#features" data-i18n="nav_features">Fonctionnalités</a></li>
         <li><a href="#pillars" data-i18n="nav_pillars">Points Forts</a></li>
-        <li><a href="#tutorials" data-i18n="nav_tutorials">Formation</a></li>
+        <li>
+          <a href="#tutorials" class="nav-tutorial-btn">
+            <span class="tutorial-pulse-dot"></span>
+            <svg class="tutorial-play-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span data-i18n="nav_tutorials">Formation</span>
+            <span class="tutorial-badge-pill" data-i18n="tut_nav_badge">3 VIDÉOS</span>
+          </a>
+        </li>
         <li><a href="#hardware" data-i18n="nav_hardware">Matériel</a></li>
         <li><a href="#preview-docs" data-i18n="nav_docs">Tickets & Factures</a></li>
         <li><a href="#pricing" data-i18n="nav_pricing">Licence</a></li>
@@ -2854,6 +2968,7 @@
         tut_p3_desc: "Vente rapide à la douchette, gestion des acomptes et crédits clients, tickets thermiques et rapport financier Z de fin de journée.",
         tut_status_active: "▶ En cours de lecture",
         tut_status_watch: "Regarder cette session →",
+        tut_nav_badge: "3 VIDÉOS",
         hero_badge: "VESTIA POS — VÊTEMENTS HOMME, FEMME, ENFANT",
         hero_title_1: "L'Excellence Technologique au Service de",
         hero_title_2: "Votre Magasin de Vêtements & Chaussures",
@@ -2989,6 +3104,7 @@
         tut_p3_desc: "إتمام المبيعات بالدوشات، إدارة الديون والتسبيقات، تذاكر الصندوق، وتقرير Z لضبط الصندوق اليومي.",
         tut_status_active: "▶ قيد التشغيل الآن",
         tut_status_watch: "مشاهدة هذا الجزء ←",
+        tut_nav_badge: "3 فيديوهات",
         hero_badge: "VESTIA POS — محلات الملابس رجالي، نسائي، أطفال والتجزئة",
         hero_title_1: "القمة في إدارة وتسيير",
         hero_title_2: "محلات الملابس رجالي، نسائي، أطفال والأحذية",
